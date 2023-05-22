@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: react-app
+    build:
+      context: ./
+    ports:
+      - 3000:3000
+    restart: always
+    tty: true
+    volumes:
+      - ./react-app:/app
+      - react-node_modules:/app/node_modules
+volumes:
+  react-node_modules:
